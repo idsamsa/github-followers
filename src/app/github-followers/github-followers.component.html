@@ -1,0 +1,33 @@
+<!-- <div class="card" *ngFor="let follower of followers">
+    <img class="card-img-top img-follower mx-auto d-block" src='{{ follower.avatar_url }}' alt="">
+    <div class="card-body">
+        <h4 class="card-title">{{follower.login}}</h4>
+        <a href='{{follower.url}}' class="card-text">{{follower.url}}</a>
+    </div>
+</div> -->
+
+<!-- <div>
+    <h1>The Followers of IDBrahim</h1>
+    <br>
+    <div class="row follower-marg" *ngFor="let follower of followers">
+        <div class="col-md-1">
+            <img class="img-follower mx-auto d-block" src='{{ follower.avatar_url }}' alt="">
+        </div>
+        <div class="col-md-4">
+            <h4 class="card-title">{{follower.login}}</h4>
+        <a href='{{follower.url}}' class="card-text">{{follower.url}}</a>
+        </div>
+    </div>
+</div> -->
+<h1>The Followers of IDBrahim</h1>
+<br>
+<div class="media follower-marg" *ngFor="let follower of followers">
+    <img src='{{ follower.avatar_url }}' class="mr-3 img-follower" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0">{{follower.login}}</h5>
+      <a [routerLink]="['/follower', follower.id, follower.login]" 
+         [queryParams]="{page: 1, type: follower.type}"
+         class="card-text">{{follower.html_url}}
+      </a>
+    </div>
+  </div>

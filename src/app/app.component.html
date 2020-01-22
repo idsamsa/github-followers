@@ -1,0 +1,73 @@
+
+
+
+<div class="container">
+  <navbar></navbar>
+  <br>
+  <router-outlet></router-outlet>
+  <br>
+  <!-- <div class="col-md-8 offset-2"> -->
+    <!-- <signup></signup> -->
+    <!-- <post></post> -->
+  <!-- </div> -->
+</div>
+  <!-- <br>
+  <br>
+  <div class="col-md-6 offset-3">
+    <contact-form></contact-form>
+  </div>
+  
+  <br>
+  <ul class="nav nav-pills">
+    <li class="nav-item" ><a class="nav-link" [class.active]="viewCourse == 'Laravel'" (click)="viewCourse = 'Laravel'" href="#">Laravel</a></li>
+    <li class="nav-item"><a class="nav-link" [class.active]="viewCourse == 'Angular'" (click)="viewCourse = 'Angular'" href="#">Angular</a></li>
+    <li class="nav-item"><a class="nav-link" [class.active]="viewCourse == 'Symfony'" (click)="viewCourse = 'Symfony'" href="#">Symfony</a></li>
+    <li class="nav-item"><a class="nav-link" [class.active]="viewCourse == 'List'" (click)="viewCourse = 'List'" href="#">Liste des Cours</a></li>
+  </ul>
+  
+  <div [ngSwitch]="viewCourse">
+    <div *ngSwitchCase="'Laravel'">Lorem Laravel</div>
+    <div *ngSwitchCase="'Angular'">lorem Angular</div>
+    <div *ngSwitchCase="'Symfony'">lorem Symfony</div>
+    <div *ngSwitchCase="'List'">
+      <button (click)="loadCourses()" class="btn btn-primary btnMar">Load</button>
+      <ul>
+        <input [(ngModel)]="newCourse" type="text" (keyup.enter)="onKeyUp()" />
+        <button (click)="addCourse(newCourse)" class="btn btn-success btnMar">Ajouter un cours</button>
+        <li *ngFor="let course of courses; trackBy: trackCourses">
+           {{course.id}} {{course.title}} 
+           <button class="btn btn-danger btnMar" (click)="deleteCourse(course)">Del</button>
+           <button class="btn btn-warning btnMar" (click)="editCourse(course)">Edit</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+
+
+  <div *ngIf="courses.length>0; then listCourses else noCourses"></div>
+  <ng-template #listCourses>
+    Ma Liste des cours en ligne
+  </ng-template>
+  <ng-template #noCourses>
+    Pas de cours disponible pour le moment
+  </ng-template>
+</div>
+
+
+<div class="container">
+  <panel [cardImage]="img">
+    <div class="header">Saidi Mustapha</div>
+    <div class="body">
+      Eisenhowerlaan 4
+      3700 Tongeren
+      Tel: 0848792146
+      mus.saidi@gmail.com
+    </div>
+  </panel>
+  <favorite [is-favorite]="post.isFavorite"  (change)="maFavoriteChanged($event)"></favorite>
+</div>
+<div class="container">
+  <button class="btn btn-primary">Click</button>
+</div> -->

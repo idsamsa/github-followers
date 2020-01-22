@@ -1,0 +1,44 @@
+<form>
+   <div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" [(ngModel)]="post.title" class="form-control" name="title" id="title" placeholder="Title">
+   </div> 
+   <div class="form-group">
+    <label for="body">Body</label>
+    <textarea type="text" [(ngModel)]="post.body" class="form-control" rows="5" name="body" id="body" placeholder="Body"></textarea>
+   </div> 
+
+   <button (click)="createPost()" class="btn btn-primary" *ngIf="btnStatus">Add</button>
+   <button (click)="updatePost()" class="btn btn-danger" *ngIf="!btnStatus">Update</button>
+</form>
+<!-- {{post|json}} -->
+
+<br>
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let post of posts">        
+               <div class="card">                   
+                   <div class="card-body">
+                       <h4 class="card-title">{{post.title}}</h4>
+                       <p class="card-text">{{post.body}}</p>
+                   </div>
+               </div>    
+               <div class="card">
+                   <div class="row">
+                       <div class="col col-md-9">
+                           
+                       </div>
+                       <div class="col col-md-1">
+                        <button type="button" class="btn btn-danger" (click)="deletePost(post)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                       </div>
+                       <div class="col col-md-1">
+                        <button type="button" class="btn btn-warning" (click)="editPost(post)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                       </div>
+                       <div class="col col-md-1">
+                           
+                    </div>
+                   </div>
+                   
+               </div>                     
+    </li>
+</ul>
