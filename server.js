@@ -1,10 +1,16 @@
-const express = require('express');
-const app = express();
+// import http module
+const http = require('http')
 
-app.use(express.static(__dirname + '/dist'));
+// server configuration
+const HOST = '127.0.0.1'
+const PORT = 8080
 
-app.all('*', (req, res) => {
-    res.status(200).send(__dirname + '/dist/index.html');
-});
+// create the server
+const server = http.createServer((req, res) => {
+  res.end('Hello!')
+})
 
-app.listen(process.env.PORT || 8080);
+// make the server listen to requests
+server.listen(PORT, HOST, () => {
+  console.log(`Server running at: http://${HOST}:${PORT}/`)
+})
